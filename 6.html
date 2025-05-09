@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>개인 사진첩 상품 페이지</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            height: 1000px;
+            /* 기본 방향이, 
+            flex-direction: row
+            가로 방향으로 나열 */
+            display: block;
+
+            flex-direction: column;
+
+            /* 
+            flex-wrap: nowrap
+            기본 다음줄 넘김이 안되어 있음 */
+            /* flex-wrap: wrap; */
+
+            /* 
+            flex-flow: row wrap
+            이번에, 방향과 줄넘김 여부를 한번에 작성 가능.  */
+            /* flex-flow: column wrap; */
+
+            /* 정렬 기준 2가지, 
+            주축, 교차축
+            예를들어) flex , row, 가로 방향으로 나열, 
+            주축 : 가로, 교차축 : 세로, 
+            1) 주축 정렬, 
+            justify-content: flex-start(왼쪽 정렬) ;
+            flex-end(오른쪽 정렬), center(가운데 정렬)
+            baseline(텍스트 기준 정렬)
+            
+
+            2)교차축 정렬 
+            align-items: flex-start(위로 정렬) ;
+            flex-end(아래로 정렬), center(가운데 정렬)
+            stretch  길게 늘려서 정렬
+            space-between 여백 균등 분배, 
+            space-around 여백 포함해서 중앙 정렬
+            baseline(텍스트 기준 정렬) */
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box {
+            text-align: center;
+            border: 1px solid gray;
+            width: auto;
+            font-size: 40px;
+            padding: 10px;
+        }
+
+        .box>ul {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            /* grid-template-columns: repeat(컬럼의 갯수, 크기) */
+            /* grid-template-columns: 150px 1fr 1fr; /*, 열이 3개인 경우, 수동/* */
+            /* grid-template-columns: repeat(auto-fit : 자동으로 열의 갯수 지정 */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+
+            /* row-gap: 20px; */
+            /*행간격을 띄우기*/
+
+            /* column-gap: 20px; */
+            /*열간격을 띄우기*/
+
+            gap: 20px;
+            /*행,열 동시에 간격을 띄우기*/
+        }
+
+        .gallery img {
+            border: 2px solid blue;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            /*이미지 비율 유지하며 채우기 */
+
+        }
+    </style>
+    <h1><a href="index.html">WEB</a></h1>
+    <div>
+        <ol class="saw">
+            <li><a href="1.html">HTML</a></li><!--링크넣는 방법-->
+            <li><a href="2.html">CSS</a></li><!--링크넣는 방법-->
+            <li><a href="3.html">JavaScript</a></li><!--링크넣는 방법-->
+            <li><a href="4.html">자기소개</a></li>
+            <li><a href="5.html">자기소개 테두리</a></li>
+            <li><a href="6.html">개인 사진첩 상품 페이지</a></li>
+            <li><a href="7.html">영준 쇼핑</a></li>
+        </ol>
+    </div>
+    <div class="container">
+        <div class="box">
+            개인 사진첩
+            <br>
+            <ul class="gallery" class="box">
+                <div>5살 나<img src="img/test1.jpg" alt="샘플사진1">
+                    <p>웃는
+                        얼굴</p>
+                </div>
+                <div>12살 나<img src="img/test2.jpg" alt="샘플사진2">
+                    <p>자전거 타는 모습</p>
+                </div>
+                <div>20살 나<img src="img/test3.png" alt="샘플사진3"><p>대학생</p></div>
+                <div>25살 나<img src="img/test4.jpg" alt="샘플사진4"><p>전역 후</p></div>
+                <div>30살 나<img src="img/test5.jpg" alt="샘플사진5"><p></p></div>
+                <div>34살 나<img src="img/test6.jpg" alt="샘플사진6"></div>
+                <div>현재 나<img src="img/test7.jpg" alt="샘플사진7"></div>
+            </ul>
+        </div>
+        <div class="box">상품 목록
+            <br>
+            <div class="box">
+                <ul class="gallery">
+                    <div>티셔츠<img src="img/test1.jpg" alt="샘플사진1"></div>
+                    <div>바지<img src="img/test2.jpg" alt="샘플사진2"></div>
+                    <div>모자<img src="img/test3.png" alt="샘플사진3"></div>
+                </ul>
+            </div>
+            <div class="box">추천 카테고리
+                <ul class="gallery">
+                    <div class="box">의류<img src="img/test4.jpg" alt="샘플사진4"></div>
+                    <div class="box">문구<img src="img/test5.jpg" alt="샘플사진5"></div>
+                    <div class="box">식품<img src="img/test6.jpg" alt="샘플사진6"></div>
+                    <div class="box">화장품<img src="img/test7.jpg" alt="샘플사진7"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

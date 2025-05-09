@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <STYLE>
+        #grid {
+            border: 5px solid pink;
+            display: grid;
+            /* grid-template-columns 열 기준으로 배치
+            1열의 크기 150px
+            fr 는 남는 공간 다차지 */
+            grid-template-columns: 1fr 2fr 3fr;
+        }
+        div {
+            border: 5px solid gray;
+        }
+    </STYLE>
+    <!-- div 태그이 역활, 단순 요소를 묶어주는 역할, 블록레벨 -->
+    <div id="grid">
+        <div>NABIGATION</div>
+        <div>ARTICLE</div>
+        <div>ARTICLE2</div>
+    </div>
+</body>
+
+</html>
