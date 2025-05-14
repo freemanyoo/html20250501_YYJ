@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Nanum+Pen+Script&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    /* 기본 언더라인 제거 */
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+#container {
+    /* 0 : 위,아래의 마진, auto : 왼쪽,오른쪽 의 마진 -> 화면 중앙 배치 */
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1900px;
+    background-color: #fff;
+}
+
+/* 헤더 작업 */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 1900px;
+    height: 150px;
+    background-color: #fff;
+    border-bottom: 2px solid green;
+}
+
+#logo {
+    /* 헤더에서 특정 로고의 위치를 배치할 때 자주 사용함.  */
+    float: left;
+    text-align: center;
+    width: 250px;
+    height: 100px;
+    /* 세로로 중간에 맞춤 , 줄간격을 높이 값과 같게 */
+    line-height: 50px;
+    margin-top: 10px;
+    padding-left: 10px;
+    border: 2px solid green ;
+    border-radius: 50px;
+
+}
+
+#logo h1 {
+    font-family: "Dongle";
+    font-weight: 700;
+    font-size: 40px;
+    color: #fff;
+    /* 텍스트의 그림자 넣기 
+    옵션1, 0 : 가로 오프셋, 텍스트 기준으로 그림자의 수평 위치 조정 양수 : 오른쪽, 음수 : 왼쪽
+    옵션2,-1px : 세로 오프셋 , 텍스트 기준으로 그림자의 수직 위치 조정 양수 : 아래, 음수 : 위로
+    옵션3, 0 : 그림자의 퍼지는 정도(흐림 효과), 0이면 날까롭게, / 값이 커지면 부드럽게 퍼진다 라고 표현
+    옵션4, #222 : 그림자의 색을 지정함, HEX, RGB, RGBA, 
+    */
+    font-size: 64px;
+    font-weight: bold;
+    background: linear-gradient(to right,
+            red 0%,
+            blue 20%,
+            lime 40%,
+            #131212 60%,
+            red 70%,
+            red 80%,
+            red 90%,
+            red 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+nav {
+    float: left;
+    position: relative;
+    left: 100px;
+    width: 1500px;
+    height: 100px;
+}
+nav input {
+    text-align: center;
+    font-size: 25px;
+    width: 800px;
+    padding: 15px ;
+    border-color: green;
+    border-radius: 30px ;
+}
+
+nav button{
+    text-align: center;
+    padding: 15px ;
+    font-size: 25px;
+    border-radius: 10px 30px 10px 30px ;
+}
+#topMenu {
+    height: 60px;
+}
+
+#topMenu>li {
+    float: left;
+    /* html 요소의 위치를 기준 위치로 설정하는 속성, 
+    요소를 문서 흐름에서 유지하면 자기 자신을 기준으로 
+    이동 할수 있게 설정.  */
+    /* 옵션, top, left, bottom, right , z-index(겹침의 순서, 값이 클수로 위에 배치) */
+    /* 여기가 기준 위치 입니다 */
+    position: relative;
+    /* top: 200px; */
+    left: 400px;
+    bottom: 20px;
+    /* z-index: 10; */
+}
+
+#topMenu>li>a {
+    display: block;
+    /* 부모의 요소의 글꼴 크기를 기준으로 상대 크기를 잡는 단위. 
+    예시) 1em , 부모 요소의 현재 글꼴 크기와 동일, 
+    예시) 1.1em , 부모 요소의 글꼴 크기보다 10% 더큼, 
+    예시) 0.9em , 부모 요소의 글꼴 크기보다 10% 더 작음,  
+    1em = 16px 
+    1.1em = 16 * 1.1 = 17.6px*/
+    font-size: 1.1em;
+    color: #033610;
+    font-weight: 600;
+    padding: 20px 60px;
+
+}
+
+
+#topMenu>li>a:hover {
+    color: rgb(73, 116, 100);
+    font-size: 1.3em;
+    }
+
+/* 본문 작업 */
+
+.contents {
+    display: grid;
+    grid-template-columns: 1fr 200px ;
+    width: 1000px;
+    /* 위,아래는 50px 여백 주고, 좌,우 자동 조절 */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 0;
+}
+
+main>section {
+    margin-top: 60px;
+}
+
+main h2 {
+    font-size: 1.5em;
+    line-height: 2.5;
+}
+
+main div {
+    margin-top: 20px;
+}
+
+main h3 {
+    font-size: 1.2em;
+    line-height: 2.2;
+}
+
+.detail p {
+    line-height: 2.0;
+    color: #222;
+}
+
+.detail>img {
+    width: 30%;
+    float: left;
+    margin-right: 50px;
+    border-radius: 20px;
+}
+
+.schedule h4 {
+    font-size: 1.2em;
+}
+
+.schedule ul {
+    list-style: none;
+}
+
+.schedule ul li {
+    line-height: 2;
+}
+
+/* 푸터 영역 */
+
+footer {
+    width: 1200px;
+    height: 100px;
+    border-top: 2px solid #222;
+}
+
+#bottomMenu {
+    width: 100%;
+    height: 20px;
+    margin-left: 60px;
+}
+
+#bottomMenu ul {
+    margin-top: 15px;
+}
+
+#bottomMenu ul li {
+    float: left;
+    padding: 5px 20px;
+    border-right: 1px solid #ddd;
+}
+
+#bottomMenu ul li:last-child {
+    border: none;
+
+}
+
+#bottomMenu ul li a,
+#bottomMenu ul li a:visited {
+    font-size: 15px;
+    color: #666;
+}
+
+/* 사이드바 영역 */
+#sideBar {
+    width: 200px;
+    float: left;
+    padding: 20px;
+    margin-left: 30px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* 그리드를 이용해서, 2분할 했고, 
+section을 div로 감싸서 id article  */
+#article {
+    margin-left: 50px;
+}
