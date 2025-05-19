@@ -13,20 +13,25 @@
         <header>
             <div id="logo">
                 <a href="#">
-                    <h1>Dopamine Pang Pang</H1>
+                    <h1>
+                        <div>Dopamine</div>
+                        <div>Pang Pang</div>
+                    </H1>
                 </a>
-                </div>
+            </div>
+            <div class="headmenu">
+                <div class="search"><input type="search" placeholder="검색어를 입력하세요"><button>검색</button></div>
                 <nav>
-                    <div><input type="search" placeholder="검색어를 입력하세요"><button>검색</button>
-                    </div>
+                    <button id="menuToggle">☰ 메뉴</button>
                     <ul id="topMenu">
+                        <li class="logIn"><a href="#">로그인 하세요</a></li>
                         <li><a href="#">메뉴1</a></li>
                         <li><a href="#">메뉴2</a></li>
                         <li><a href="#">메뉴3</a></li>
                         <li><a href="#">메뉴4</a></li>
                     </ul>
                 </nav>
-            
+            </div>
         </header>
         <main class="contents">
             <div id="article">
@@ -37,7 +42,13 @@
                         <b>
                             <p>샘플 설명1 강조</p>
                         </b>
-                        <p>샘플 설명에 관한 여러가지 내용을 담기 등....</p>
+                        <p>샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에
+                            관한
+                            여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지
+                            내용을 담기
+                            등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플
+                            설명에
+                            관한 여러가지 내용을 담기 등....</p>
                     </div>
                     <div class="schedule">
                         <h3>샘플 보조 제목2</h3>
@@ -55,7 +66,13 @@
                         <b>
                             <p>샘플 설명2 강조</p>
                         </b>
-                        <p>샘플 설명에 관한 여러가지 내용을 담기 등....</p>
+                        <p>샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에
+                            관한
+                            여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지
+                            내용을 담기
+                            등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플
+                            설명에
+                            관한 여러가지 내용을 담기 등....</p>
                     </div>
                     <div class="schedule">
                         <h3>샘플 보조 제목2</h3>
@@ -74,7 +91,13 @@
                         <b>
                             <p>샘플 설명3 강조</p>
                         </b>
-                        <p>샘플 설명에 관한 여러가지 내용을 담기 등....</p>
+                        <p>샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에
+                            관한
+                            여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지
+                            내용을 담기
+                            등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플 설명에 관한 여러가지 내용을 담기 등....샘플
+                            설명에
+                            관한 여러가지 내용을 담기 등....</p>
                     </div>
                     <div class="schedule">
                         <h3>샘플 보조 제목3</h3>
@@ -86,14 +109,21 @@
 
                 </section>
             </div>
-            <aside id="sideBar">
-                <h3><button>로그인</button></h3>
+            <form>
+                <label>
+
+                    <input type="text" name="userid" placeholder="아이디 입력" required>
+                </label>
+                <label>
+                    <input type="password" name="password" placeholder="비밀번호 입력" required>
+                </label>
+                <button>로그인</button>
                 <ul>
                     <li><a href="#">아이디 찾기</a></li>
                     <li><a href="#">비밀번호 찾기</a></li>
                     <li><a href="#">회원가입</a></li>
                 </ul>
-            </aside>
+            </form>
 
 
         </main>
@@ -108,6 +138,7 @@
             </section>
         </footer>
     </div>
+    <script src="js/structure.js"></script>
 </body>
 
 </html>

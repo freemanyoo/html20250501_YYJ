@@ -7,7 +7,6 @@
 }
 
 a {
-    /* 기본 언더라인 제거 */
     text-decoration: none;
 }
 
@@ -16,36 +15,31 @@ ul {
 }
 
 #container {
-    /* 0 : 위,아래의 마진, auto : 왼쪽,오른쪽 의 마진 -> 화면 중앙 배치 */
     margin: 0 auto;
     width: 100%;
-    max-width: 1900px;
+    max-width: 1200px;
     background-color: #fff;
 }
 
 /* 헤더 작업 */
 
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    max-width: 1900px;
-    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: auto;
     background-color: #fff;
     border-bottom: 2px solid green;
+    flex-wrap: wrap;
 }
 
 #logo {
-    /* 헤더에서 특정 로고의 위치를 배치할 때 자주 사용함.  */
-    float: left;
-    text-align: center;
-    width: 250px;
-    height: 100px;
-    /* 세로로 중간에 맞춤 , 줄간격을 높이 값과 같게 */
-    line-height: 50px;
+    line-height: 45px;
+    padding: 10px;
     margin-top: 10px;
-    padding-left: 10px;
-    border: 2px solid green ;
+    display: inline-block;
+    border: 2px solid green;
     border-radius: 50px;
 
 }
@@ -72,78 +66,83 @@ header {
             red 80%,
             red 90%,
             red 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
 }
 
-nav {
-    float: left;
-    position: relative;
-    left: 100px;
-    width: 1500px;
-    height: 100px;
+.search {
+    padding-left: 40px;
+    display: flex;
+    justify-content: center;
 }
-nav input {
-    text-align: center;
+
+.headmenu {
+    display: grid;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search input {
     font-size: 25px;
-    width: 800px;
-    padding: 15px ;
+    width: 400px;
+    padding: 15px;
     border-color: green;
-    border-radius: 30px ;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
-nav button{
+.search button {
     text-align: center;
-    padding: 15px ;
+    padding: 15px;
     font-size: 25px;
-    border-radius: 10px 30px 10px 30px ;
-}
-#topMenu {
-    height: 60px;
+    border-radius: 10px 30px 10px 30px;
+    cursor: pointer;
 }
 
-#topMenu>li {
-    float: left;
-    /* html 요소의 위치를 기준 위치로 설정하는 속성, 
-    요소를 문서 흐름에서 유지하면 자기 자신을 기준으로 
-    이동 할수 있게 설정.  */
-    /* 옵션, top, left, bottom, right , z-index(겹침의 순서, 값이 클수로 위에 배치) */
-    /* 여기가 기준 위치 입니다 */
-    position: relative;
-    /* top: 200px; */
-    left: 400px;
-    bottom: 20px;
-    /* z-index: 10; */
+nav {
+    gap: 20px;
+}
+
+#topMenu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: black;
+}
+
+#menuToggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
 }
 
 #topMenu>li>a {
-    display: block;
-    /* 부모의 요소의 글꼴 크기를 기준으로 상대 크기를 잡는 단위. 
-    예시) 1em , 부모 요소의 현재 글꼴 크기와 동일, 
-    예시) 1.1em , 부모 요소의 글꼴 크기보다 10% 더큼, 
-    예시) 0.9em , 부모 요소의 글꼴 크기보다 10% 더 작음,  
-    1em = 16px 
-    1.1em = 16 * 1.1 = 17.6px*/
     font-size: 1.1em;
-    color: #033610;
     font-weight: 600;
-    padding: 20px 60px;
-
+    padding: 10px 20px;
+    color: black;
+    display: block;
+    text-decoration: none;
 }
 
-
 #topMenu>li>a:hover {
-    color: rgb(73, 116, 100);
-    font-size: 1.3em;
-    }
+    color: rgb(55, 60, 60);
+    text-shadow: 1px 2px 2px #222;
+}
+
+.logIn {
+    display: none;
+}
 
 /* 본문 작업 */
 
 .contents {
     display: grid;
-    grid-template-columns: 1fr 200px ;
+    grid-template-columns: 1fr 200px;
     width: 1000px;
     /* 위,아래는 50px 여백 주고, 좌,우 자동 조절 */
     margin-top: 50px;
@@ -196,51 +195,244 @@ main h3 {
 /* 푸터 영역 */
 
 footer {
-    width: 1200px;
-    height: 100px;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    padding: 20px 30px;
     border-top: 2px solid #222;
+    box-sizing: border-box;
 }
 
 #bottomMenu {
     width: 100%;
-    height: 20px;
-    margin-left: 60px;
+    margin-left: 0;
+    display: flex;
+    /* ✅ 가운데 정렬을 위한 Flex */
+    justify-content: center;
+    /* ✅ 수평 가운데 정렬 */
 }
 
 #bottomMenu ul {
-    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #bottomMenu ul li {
-    float: left;
     padding: 5px 20px;
     border-right: 1px solid #ddd;
 }
 
 #bottomMenu ul li:last-child {
     border: none;
-
 }
 
 #bottomMenu ul li a,
 #bottomMenu ul li a:visited {
     font-size: 15px;
     color: #666;
+    text-decoration: none;
 }
 
-/* 사이드바 영역 */
-#sideBar {
-    width: 200px;
-    float: left;
+form {
+    width: 300px;
+    height: 300px;
     padding: 20px;
     margin-left: 30px;
     background-color: #f8f8f8;
     border: 1px solid #ddd;
     border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form ul li {
+    display: inline-flex;
+}
+
+form ul li:not(:last-child) {
+    border-right: 1px solid gray;
+    padding-right: 10px;
+}
+
+form button {
+    background-color: rgb(75, 181, 75);
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
 }
 
 /* 그리드를 이용해서, 2분할 했고, 
 section을 div로 감싸서 id article  */
 #article {
     margin-left: 50px;
+}
+
+/* 추가 작업, 
+1 headline 아이디를 가진 영역 안쪽 부분 배치를 flex 형태로 변경. 
+2 반응형, 768 px 이하 일 경우, 하나씩 세로 로 배치 */
+section[id^="headline"] {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+section[id^="headline"] .detail,
+section[id^="headline"].schedule {
+    flex: 1;
+}
+
+/* 선 기준으로 위에 코드는 큰화면 : pc 화면 1024 px 이상 */
+/* ====================================================================== */
+/* 선 기준으로 아래 코드는 작은 화면 : 태블릿 화면 768 px 이하 */
+@media only screen and (max-width: 768px) {
+
+
+    /* ✅ headline 섹션 내부를 세로 배치로 전환 */
+    #headline {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detail {
+        flex-direction: column;
+    }
+
+    #headline .detail,
+    #headline .schedule {
+        width: 100%;
+    }
+
+    .detail>img {
+        width: 50%;
+        /* 한 줄에 적당한 너비 */
+        margin-right: 0;
+        border-radius: 10px;
+    }
+
+    /* ✅ layout: aside와 article을 세로 배치 (1열) */
+    .contents {
+        grid-template-columns: 1fr;
+        /* ✅ 1열 구조로 전환 */
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    #article {
+        grid-column: 1 / -1;
+        /* 전체 너비 차지 */
+        padding: 20px;
+        max-width: 95%;
+        /* ✅ 너무 꽉 차는 것 방지 */
+        margin: 0 auto;
+        /* ✅ 중앙 정렬 */
+    }
+
+
+
+    /* ✅ 드롭다운 메뉴 전환용 설정 */
+    header {
+        height: auto;
+        min-height: 100px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+
+    }
+
+    #menuToggle {
+        display: block;
+        color: #131212;
+        align-self: flex-end;
+    }
+
+    #topMenu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #f8f8f8;
+        padding: 10px;
+        border: 1px solid #ddd;
+        width: 100%;
+        margin-top: 0;
+        /* ✅ 버튼 아래에 자연스럽게 붙도록 */
+    }
+
+    #topMenu.active {
+        display: flex;
+    }
+
+    #topMenu>li {
+        float: none;
+    }
+
+    #topMenu>li>a {
+        color: #333;
+        padding: 10px 15px;
+    }
+
+    #topMenu>li>a:hover {
+        color: rgb(66, 158, 56);
+    }
+
+    .logIn {
+        display: block;
+    }
+
+    /* 푸터 영역 */
+    #bottomMenu ul {
+        flex-direction: column ;
+        align-items: flex-start ;
+        gap: 10px;
+    }
+
+    #bottomMenu ul li {
+        border: none;
+        padding: 8px 0;
+    }
+
+    #bottomMenu ul li a {
+        font-size: 16px;
+        color: #333;
+    }
+
+    footer {
+        padding: 20px 15px;
+    }
+
+    form {
+        display: none;
+    }
+}
+/* 768px~1024px 대응 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    form {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        padding: 15px;
+        background: #f5f5f5;
+        border-radius: 8px;
+    }
 }
